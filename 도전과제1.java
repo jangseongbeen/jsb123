@@ -1,19 +1,23 @@
-package chap03;
-import java.util.Scanner;
+package chap04;
+class Printer {
+	int numOfPapers=0;
+	
+	public void print(int amount) {
+		System.out.println("출력한 용지:"+amount);
+		numOfPapers-=amount;
+		System.out.println("남은 용지:"+numOfPapers);
+	}
+}
+
 public class 도전과제1 {
 	public static void main(String[] args) {
-		int result=1;
-		int n;
-		Scanner in=new Scanner(System.in);
+		Printer Print = new Printer();
+		Print.numOfPapers=100;
+		System.out.println("현재 용지 :"+Print.numOfPapers);
 		
-		System.out.println("정수를 입럭하시오:");
-		n=in.nextInt();
+		Print.print(70);
 		
-		while (n>0) {
-			result *=n;
-			n--;
-		}
-		System.out.print(result);
+		
 	}
 
 }
